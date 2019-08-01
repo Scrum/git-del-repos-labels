@@ -34,3 +34,6 @@ Description: *Repository name.*
 Type: `String` **`Required`**  
 Default: `undefined`  
 Description: *You  Github Personal Token. Grab it from your [Developer settings](https://github.com/settings/developers)*
+
+## Related
+ - [git-get-repos-labels](https://github.com/Scrum/git-get-repos-labels) - A iny helper to get a list of labels from the github repository
