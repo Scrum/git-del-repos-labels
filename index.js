@@ -37,24 +37,15 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var _this = this;
 exports.__esModule = true;
 var ghGot = require("gh-got");
-var git_get_repos_labels_1 = require("git-get-repos-labels");
 exports["default"] = (function (_a) {
-    var owner = _a.owner, repo = _a.repo, token = _a.token;
+    var name = _a.label.name, owner = _a.owner, repo = _a.repo, token = _a.token;
     return __awaiter(_this, void 0, void 0, function () {
         return __generator(this, function (_b) {
-            switch (_b.label) {
-                case 0: return [4 /*yield*/, git_get_repos_labels_1["default"]({ owner: owner, repo: repo, token: token }).then(function (labels) {
-                        labels.forEach(function (_a) {
-                            var name = _a.name;
-                            ghGot["delete"]("repos/" + owner + "/" + repo + "/labels/" + name, {
-                                json: true,
-                                token: token,
-                                body: { name: name }
-                            });
-                        });
-                    })];
-                case 1: return [2 /*return*/, _b.sent()];
-            }
+            return [2 /*return*/, ghGot["delete"]("repos/" + owner + "/" + repo + "/labels/" + name, {
+                    json: true,
+                    token: token,
+                    body: { name: name }
+                })];
         });
     });
 });
