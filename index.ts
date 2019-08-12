@@ -1,20 +1,25 @@
-import ghGot = require('gh-got');
+import graphqlGot = require('graphql-got');
 
 interface options {
   label: label,
-  owner: string,
-  repo: string,
   token: string
 }
 
 interface label {
-  name: string
+  id: string
 }
 
-export default async ({label: {name}, owner, repo, token}: options): Promise<object> => {
-  return ghGot.delete(`repos/${owner}/${repo}/labels/${name}`, {
-    json: true,
-    token,
-    body: {name}
+export default ({label: {id}, token}: options) => {
+  return graphqlGot('https://api.github.com/graphql', {
+    query: `mutation {
+      deleteLabel(input: {id: "${id}"}) {
+        clientMutationId
+      }
+    }`, 
+    headers: {
+      'accept': 'application/vnd.github.bane-preview+json'
+    },
+    token
   });
 }
+
