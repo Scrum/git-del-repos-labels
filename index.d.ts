@@ -1,11 +1,9 @@
 interface options {
     label: label;
-    owner: string;
-    repo: string;
     token: string;
 }
 interface label {
-    name: string;
+    id: string;
 }
-declare const _default: ({ label: { name }, owner, repo, token }: options) => Promise<object>;
+declare const _default: ({ label: { id }, token }: options) => any;
 export default _default;

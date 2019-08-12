@@ -1,6 +1,6 @@
 {
   "name": "git-del-repos-labels",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A tiny helper to del of label in the github repository ",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   "author": "scrum",
   "license": "MIT",
   "dependencies": {
-    "gh-got": "^8.1.0"
+    "graphql-got": "^0.1.2"
   },
   "devDependencies": {
     "ava": "^2.2.0",
