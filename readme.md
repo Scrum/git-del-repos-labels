@@ -12,7 +12,7 @@ npm install git-del-repos-labels
 ```js
 import gitDelReposLabels from 'git-del-repos-labels';
 
-gitDelReposLabels({label: {name: 'bug'}, owner: 'scrum', repo: 'slims', token: '59bd8d5eb1980b7f926f2d106f4f2f0312fdf97f'});
+gitDelReposLabels({label: {id: 'MDU6TGFiZWwzODg4NTI4Mzc='}, token: '0e8a604e0ee6e2c652b3a93c55dbc440ea6ad4e5'});
 ```
 > will be delete label in repository
 
@@ -21,19 +21,7 @@ gitDelReposLabels({label: {name: 'bug'}, owner: 'scrum', repo: 'slims', token: '
 
 Type: `object` **`Required`**  
 Default: `undefined`  
-Description: *label del options `{name: string}` when `{name}` are required*
-
-#### `owner`
-
-Type: `String` **`Required`**  
-Default: `undefined`  
-Description: *Github owner or organization name.*
-
-#### `repo`
-
-Type: `String` **`Required`**  
-Default: `undefined`  
-Description: *Repository name.*
+Description: *label del options `{id: string}` when `{id}` are required*
 
 #### `token`
 
